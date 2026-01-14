@@ -1,0 +1,263 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SACHO SATRAM Rice Mill</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#f4f4f4;
+}
+
+header{
+background:#1b5e20;
+color:white;
+padding:25px;
+text-align:center;
+}
+
+nav{
+background:#2e7d32;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+nav button{
+background:none;
+border:none;
+color:white;
+padding:15px 22px;
+font-size:16px;
+cursor:pointer;
+}
+
+nav button:hover{
+background:#1b5e20;
+}
+
+section{
+display:none;
+background:white;
+margin:18px;
+padding:25px;
+border-radius:6px;
+}
+
+.active{
+display:block;
+}
+
+h2{
+color:#2e7d32;
+margin-bottom:10px;
+}
+
+p,li{
+line-height:1.7;
+}
+
+.owner-box{
+display:flex;
+flex-wrap:wrap;
+gap:25px;
+align-items:flex-start;
+}
+
+.owner-img img{
+width:200px;
+height:240px;
+object-fit:cover;
+border-radius:6px;
+border:3px solid #2e7d32;
+box-shadow:0 4px 8px rgba(0,0,0,0.2);
+}
+
+.owner-details{
+flex:1;
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin:8px 0;
+border:1px solid #ccc;
+border-radius:4px;
+font-size:15px;
+}
+
+.submit{
+background:#2e7d32;
+color:white;
+border:none;
+padding:12px;
+font-size:16px;
+cursor:pointer;
+width:100%;
+}
+
+footer{
+background:#1b5e20;
+color:white;
+text-align:center;
+padding:12px;
+margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Sacho Satram Rice Mill</h1>
+<p>Trusted Name in Rice Processing Industry</p>
+</header>
+
+<nav>
+<button onclick="showSection('home')">Home</button>
+<button onclick="showSection('about')">About Mill</button>
+<button onclick="showSection('process')">Rice Processing</button>
+<button onclick="showSection('season')">Seasons</button>
+<button onclick="showSection('owner')">Owner</button>
+<button onclick="showSection('management')">Management</button>
+<button onclick="showSection('jobs')">Job Apply</button>
+<button onclick="showSection('contact')">Contact</button>
+</nav>
+
+<section id="home" class="active">
+<h2>Welcome to Sacho Satram Rice Mill</h2>
+<p>
+Sacho Satram Rice Mill is a modern rice processing factory focused on quality,
+purity and customer satisfaction. We use advanced machines and skilled manpower
+to deliver high quality rice to the market.
+</p>
+</section>
+
+<section id="about">
+<h2>About Our Rice Mill</h2>
+<p>
+A rice mill is a manufacturing unit where paddy is processed into edible rice.
+At Sacho Satram Rice Mill, we follow proper cleaning, de-husking, polishing and
+packing procedures to ensure premium quality rice.
+</p>
+</section>
+
+<section id="process">
+<h2>Rice Processing System</h2>
+<ul>
+<li>Paddy Cleaning and Drying</li>
+<li>Husk Removal</li>
+<li>Rice Polishing</li>
+<li>Quality Checking</li>
+<li>Packing and Storage</li>
+</ul>
+</section>
+
+<section id="season">
+<h2>Season Information</h2>
+<ul>
+<li><b>Sari Season:</b> October to January</li>
+<li><b>Kerik Season:</b> February to June</li>
+</ul>
+</section>
+
+<section id="owner">
+<h2>Owner Information</h2>
+
+<div class="owner-box">
+<div class="owner-img">
+<img src="seth.jpeg"
+</div>
+
+<div class="owner-details">
+<p><b>Name:</b> Seth Washdev Chawla</p>
+<p><b>Designation:</b> Owner – Sacho Satram Rice Mill</p>
+<p><b>Education:</b> Graduate in Business Management</p>
+<p><b>Experience:</b> More than 20 years in Rice Milling Industry</p>
+
+<p>
+Seth Washdev Chawla is a hardworking, honest and supportive person.
+He believes in helping workers, maintaining strong relationships with farmers
+and delivering the best quality rice to customers.
+</p>
+
+<p>
+Under his leadership, the rice mill has grown steadily and earned a strong
+reputation in the local market. He always motivates employees and supports
+teamwork and discipline.
+</p>
+</div>
+</div>
+</section>
+
+<section id="management">
+<h2>Management Team</h2>
+<ul>
+<li>Kalish – Production Manager</li>
+<li>Kishore – Quality Control Manager</li>
+<li>Lineman – Store & Logistics Manager</li>
+</ul>
+</section>
+
+<section id="jobs">
+<h2>Job Application Form</h2>
+
+<input type="text" id="jname" placeholder="Full Name">
+<input type="number" id="jage" placeholder="Age">
+<input type="text" id="jedu" placeholder="Education">
+<input type="text" id="jcity" placeholder="City">
+<input type="text" id="jcontact" placeholder="Contact Number">
+
+<select id="jpost">
+<option>Select Job Position</option>
+<option>Machine Operator</option>
+<option>Helper</option>
+<option>Supervisor</option>
+<option>Office Staff</option>
+</select>
+
+<button class="submit" onclick="submitJob()">Submit Application</button>
+<p id="jobmsg"></p>
+</section>
+
+<section id="contact">
+<h2>Contact Details</h2>
+<p>
+Mobile: 03366100620<br>
+Email: Sacho Satram Rice Mill Kashmore<br>
+Address: Man Gubbu Kashmore Road, Sacho Satram Rice Mill
+</p>
+</section>
+
+<footer>
+<p>© 2026 Sacho Satram Rice Mill | AICTE Lab Project</p>
+</footer>
+
+<script>
+function showSection(id){
+var s=document.querySelectorAll("section");
+s.forEach(function(x){x.classList.remove("active");});
+document.getElementById(id).classList.add("active");
+}
+
+function submitJob(){
+var n=jname.value;
+var a=jage.value;
+var e=jedu.value;
+var c=jcity.value;
+var p=jcontact.value;
+
+if(n==""||a==""||e==""||c==""||p==""){
+jobmsg.innerHTML="Please fill all details before submitting.";
+return;
+}
+jobmsg.innerHTML="Thank you "+n+", your job application has been submitted successfully.";
+}
+</script>
+
+</body>
+</html>
